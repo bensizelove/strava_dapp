@@ -36,11 +36,13 @@ class App extends Component {
               for (var i = 0; i < arrayLength; i++) {
                   const to_miles = (getMiles(myStringArray[i].distance))
                   activity_list.push({act_name: myStringArray[i].name, act_dist: to_miles.toFixed(1)})
+                  if (myStringArray[i].type === "Run"){
                   dist_list.push(to_miles.toFixed(1));
+                }
               }
               const check_marathon = dist_list.includes('26.2')
               const true_or_false = check_marathon
-              //console.log(true_or_false)
+              //console.log(dist_list)
               this.setState({activity_list: activity_list, true_or_false: true_or_false})
             })
             .catch(console.log)
@@ -102,7 +104,7 @@ class App extends Component {
       //add alert if trying to withdrawl nothing?
       if (this.state.true_or_false === false){
         swal({
-          title: "You Havent ran a Marathon Yet",
+          title: "You Havent ran a Marathon yet",
           icon: "error",
           text: "Keep working to get your collateral back!" 
       });
