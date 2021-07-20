@@ -116,13 +116,10 @@ class App extends Component {
           
         }
       }
-      
     }
   }
   
 
-  
-  
   constructor(props) {
     super(props)
     this.state = {
@@ -158,8 +155,10 @@ class App extends Component {
         <br></br>
           <h1>Welcome to your Marathon Trainer</h1>
           <br></br>
-          
-          {/**/}
+          {/* 
+          <h3>Bank Address:</h3>
+          <h2>{this.state.dBankAddress}</h2>
+          A JSX comment */}
           {/*  
           <h3>Your meta MetaMask address:</h3>
           <h2>{this.state.account}</h2>
@@ -167,11 +166,6 @@ class App extends Component {
           <br></br>
           <h3>Your MetaMask Balance:</h3>
           <h2>{this.state.wallet_eth_balance} ETH</h2>
-          
-          {/* 
-          <h3>Bank Address:</h3>
-          <h2>{this.state.dBankAddress}</h2>
-          A JSX comment */}
           <br></br>
           <h3>Bank Balance:</h3>
           <h2>{this.state.bank_eth_balance} ETH</h2>
