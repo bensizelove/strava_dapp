@@ -67,12 +67,6 @@ contract dBank {
         //check user's hodl time
         uint256 depositTime = block.timestamp - depositStart[msg.sender];
 
-        //31668017 - interest(10% APY) per second for min. deposit amount (0.01 ETH), cuz:
-        //1e15(10% of 0.01 ETH) / 31577600 (seconds in 365.25 days)
-
-        //(etherBalanceOf[msg.sender] / 1e16) - calc. how much higher interest will be (based on deposit), e.g.:
-        //for min. deposit (0.01 ETH), (etherBalanceOf[msg.sender] / 1e16) = 1 (the same, 31668017/s)
-        //for deposit 0.02 ETH, (etherBalanceOf[msg.sender] / 1e16) = 2 (doubled, (2*31668017)/s)
         uint256 interestPerSecond = 31668017 *
             (etherBalanceOf[msg.sender] / 1e16);
         uint256 interest = interestPerSecond * depositTime;
